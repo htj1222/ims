@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oxm="http://www.springframework.org/schema/oxm"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="mariaDataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+		<property name="driverClass" value="org.mariadb.jdbc.Driver"/>
+		<property name="url" value="jdbc:mariadb://localhost/ims_test"/>
+		<property name="username" value="root"/>
+		<property name="password" value="castis"/>
+	</bean>
+	<bean id="projectDao" class="com.castis.c3.dao.ProjectDaoJdbc">
+		<property name="dataSource" ref="mariaDataSource"/>
+	</bean>
+	<bean id="teamDao" class="com.castis.c3.dao.TeamDaoJdbc">
+		<property name="dataSource" ref="mariaDataSource"/>
+	</bean>
+	<bean id="ticketDao" class="com.castis.c3.dao.TicketDaoJdbc">
+		<property name="dataSource" ref="mariaDataSource"/>
+	</bean>
+	<bean id="userDao" class="com.castis.c3.dao.UserDaoJdbc">
+		<property name="dataSource" ref="mariaDataSource"/>
+	</bean>
+	<bean id="vacationDao" class="com.castis.c3.dao.VacationDaoJdbc">
+		<property name="dataSource" ref="mariaDataSource"/>
+	</bean>
+</beans>
