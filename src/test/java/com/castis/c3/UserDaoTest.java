@@ -34,9 +34,9 @@ public class UserDaoTest {
 
 		dao.deleteAll();
 		Assert.assertTrue(dao.getCount() == 0);
-		user1 = new User("kskim", "kskimpwd", "c3", "팀장", "010-7164-9777", "kskim@castis.com");
-		user2 = new User("tjha", "tjhapwd", "c3", "팀원", "010-1111-2222", "tjha@castis.com");
-		user3 = new User("jhbae", "jhbaepwd", "c3", "팀원", "010-2222-3333", "jhbae@castis.com");
+		user1 = new User("kskim", "kskim", "kskimpwd", "c3", "팀장", "010-7164-9777", "kskim@castis.com");
+		user2 = new User("tjha", "tjha", "tjhapwd", "c3", "팀원", "010-1111-2222", "tjha@castis.com");
+		user3 = new User("jhbae", "jhbae", "jhbaepwd", "c3", "팀원", "010-2222-3333", "jhbae@castis.com");
 	}
 
 	@Test

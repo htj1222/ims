@@ -56,9 +56,9 @@ public class TicketDaoTest {
 		UserDao userDao = context.getBean("userDao", UserDao.class);
 		userDao.deleteAll();
 		Assert.assertTrue(userDao.getCount() == 0);
-		User user1 = new User("김경송", "kskimpwd", "c3", "팀장", "010-7164-9777", "kskim@castis.com");
-		User user2 = new User("배정환", "tjhapwd", "c3", "팀원", "010-1111-2222", "tjha@castis.com");
-		User user3 = new User("하태진", "jhbaepwd", "c3", "팀원", "010-2222-3333", "jhbae@castis.com");
+		User user1 = new User("kskim", "김경송", "kskimpwd", "c3", "팀장", "010-7164-9777", "kskim@castis.com");
+		User user2 = new User("jhbae","배정환", "tjhapwd", "c3", "팀원", "010-1111-2222", "tjha@castis.com");
+		User user3 = new User("jhbae","하태진", "jhbaepwd", "c3", "팀원", "010-2222-3333", "jhbae@castis.com");
 		userDao.add(user1);
 		userDao.add(user2);
 		userDao.add(user3);

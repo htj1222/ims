@@ -26,8 +26,10 @@ public class UserDaoJdbc implements UserDao {
 
 	public void add(User user) {
 		if (user != null) {
-			this.jdbcTemplate.update("insert into user(username,password,teamname,position,cellphone,email) values(?,?,?,?,?,?)", user.getUsername(),
-					user.getPassword(), user.getTeamname(), user.getPosition(), user.getCellphone(), user.getEmail());
+			this.jdbcTemplate.update(
+					"insert into user(userid, username,password,teamname,position,cellphone,email) values(?,?,?,?,?,?,?)",
+					user.getUserid(), user.getUsername(), user.getPassword(), user.getTeamname(), user.getPosition(),
+					user.getCellphone(), user.getEmail());
 		}
 	}
 
@@ -44,6 +46,7 @@ public class UserDaoJdbc implements UserDao {
 		@Override
 		public User mapRow(ResultSet rs, int rowNum) throws SQLException {
 			User user = new User();
+			user.setUserid(rs.getString("userid"));
 			user.setUsername(rs.getString("username"));
 			user.setPassword(rs.getString("password"));
 			user.setTeamname(rs.getString("teamname"));
@@ -55,7 +58,8 @@ public class UserDaoJdbc implements UserDao {
 	};
 
 	public User get(String username) {
-		return jdbcTemplate.queryForObject("select * from user where username = ?", new Object[] { username }, this.userMapper);
+		return jdbcTemplate.queryForObject("select * from user where username = ?", new Object[] { username },
+				this.userMapper);
 	}
 
 	public List<User> getAll() {

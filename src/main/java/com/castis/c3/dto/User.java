@@ -1,8 +1,9 @@
 package com.castis.c3.dto;
 
 public class User {
-	private String username;
+	private String userid;
 	private String password;
+	private String username;
 	private String teamname;
 	private String position;
 	private String cellphone;
@@ -11,13 +12,22 @@ public class User {
 	public User() {
 	}
 	
-	public User(String username, String password, String teamname, String position, String cellphone, String email) {
+	public User(String userid, String username, String password, String teamname, String position, String cellphone, String email) {
+		this.userid = userid;
 		this.username = username;
 		this.password = password;
 		this.teamname = teamname;
 		this.position = position;
 		this.cellphone = cellphone;
 		this.email = email;
+	}
+	
+	public String getUserid() {
+		return userid;
+	}
+
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 
 	public String getUsername() {

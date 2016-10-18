@@ -49,6 +49,13 @@
 			<version>${spring-framework.version}</version>
 		</dependency>
 		
+		<!-- Maria DB Driver -->
+		<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+		
 		<!-- Other Web dependencies -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
